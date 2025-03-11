@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <meta charset="utf-8" />
+    <script>
+      var childwin;
+      const childname = "popup";
+      function openChild() {
+        childwin = window.open("http://127.0.0.1:5502/file2-counter.html");
+      }
+      function sendMessage() {
+        let msg = { pName: "Bob", pAge: "35" };
+
+        childwin.postMessage(msg, "*");
+        childwin.focus();
+      }
+    </script>
+  </head>
+  <body>
+    <form>
+      <fieldset>
+        <input
+          type="button"
+          id="btnopen"
+          value="Open child"
+          onclick="openChild();"
+        />
+        <input
+          type="button"
+          id="btnSendMsg"
+          value="Send Message"
+          onclick="sendMessage();"
+        />
+      </fieldset>
+    </form>
+  </body>
+</html>

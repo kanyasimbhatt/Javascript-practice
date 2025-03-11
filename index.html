@@ -4,11 +4,48 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, 32%);
+        grid-template-rows: 300px;
+        column-gap: 20px;
+        row-gap: 20px;
+      }
+
+      .grid > div {
+        border: 1px solid black;
+        height: 300px;
+      }
+
+      /* .grid {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+      }
+      .grid > div {
+        border: 1px solid black;
+        display: flex;
+        width: 30%;
+        height: 300px;
+      } */
+    </style>
   </head>
   <body>
-    <input type="number" class="input1" onchange="func1()" />
+    <!-- <input type="number" class="input1" onchange="func1()" />
     <button class="btn" onclick="convert()">submit</button>
     <p class="output"></p>
-    <script src="s2.js"></script>
+    <script src="news.js"></script> -->
+
+    <div class="grid">
+      <div>dfsdf</div>
+      <div>sdfsdf</div>
+      <div>sdfsdf</div>
+    </div>
+
+    <!-- <div class="grid" style="margin-top: 20px">
+      <div>sdfsdf</div>
+      <div>fgsdg</div>
+    </div> -->
   </body>
 </html>

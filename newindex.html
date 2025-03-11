@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>This is a list:</h1>
+    <ul class="element"></ul>
+    <ul class="tree"></ul>
+    <script>
+      //dynamically getting input for list
+      let fragment = new DocumentFragment();
+      let input = prompt("Enter the element to add onto the list");
+      console.log(input);
+      while (input != "") {
+        const li = document.createElement("li");
+        li.append(input);
+        fragment.append(li);
+        input = prompt("Enter the element to add onto the list");
+      }
+      console.log(fragment);
+      const ele = document.getElementsByClassName("element")[0];
+      console.log(ele);
+      ele.append(fragment);
+    </script>
+    <script>
+      //create ul li tree like structure
+    </script>
+
+    <script>
+      const notification = document.createElement("div");
+
+      notification.style.top = "0px";
+      notification.style.right = "0px";
+      notification.innerHTML = "Hello!";
+      notification.className = "welcome";
+      document.body.append(notification);
+
+      setTimeout(() => {
+        notification.remove();
+      }, 1500);
+    </script>
+  </body>
+</html>
+<!--let data = {
+  "Fish": {
+    "trout": {},
+    "salmon": {}
+  },
+
+  "Tree": {
+    "Huge": {
+      "sequoia": {},
+      "oak": {}
+    },
+    "Flowering": {
+      "apple tree": {},
+      "magnolia": {}
+    }
+  }
+};-->

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="/" id="forms">
+      <input type="text" data-uppercase />
+      <input type="text" />
+      <input type="text" />
+    </form>
+
+    <script>
+      document.querySelector("#forms").addEventListener("keyup", (event) => {
+        if (event.uppercase != undefined)
+          event.target.value = event.target.value.toUpperCase();
+      });
+    </script>
+  </body>
+</html>

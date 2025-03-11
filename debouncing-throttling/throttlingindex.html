@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" class="an-input" onkeydown="calledFunc()" />
+
+    <script>
+      const ele = document.getElementsByClassName("an-input")[0];
+      function execute() {
+        console.log(ele.value);
+      }
+      function throttleFunc(execute, limit) {
+        let flag = true;
+        return function () {
+          if (flag) {
+            execute();
+            flag = false;
+            setTimeout(() => (flag = true), limit);
+          }
+        };
+      }
+      let newFunc = throttleFunc(execute, 2000);
+      function calledFunc() {
+        newFunc();
+      }
+    </script>
+  </body>
+</html>

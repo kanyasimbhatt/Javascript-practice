@@ -2,6 +2,7 @@ let a;
 function func1(){
     const element = document.getElementsByClassName('input1');
     a = element[0].value;
+
     
 }
 

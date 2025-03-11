@@ -1,0 +1,31 @@
+<!--Highlight the text present in the paragraph whose length is greater than 8-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p class="paragraph">
+      hello this is esophagus and I wanted to eat honeybee
+    </p>
+    <script>
+      const para = document.getElementsByClassName("paragraph")[0];
+      let arr = para.textContent.split(" ");
+      let str = "";
+
+      for (let i of arr) {
+        if (i.length > 8) {
+          str += `<span><mark>${i}</mark></span>`;
+        } else {
+          str += i;
+        }
+        str += " ";
+      }
+
+      para.innerHTML = str;
+    </script>
+  </body>
+</html>
