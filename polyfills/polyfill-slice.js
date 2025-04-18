@@ -1,28 +1,19 @@
-Array.prototype.wrap = function () {
-  let arr = this;
-  const handler = {
-    get(arr, prop) {
-      return arr.at(prop);
-    },
-  };
-  return new Proxy(arr, handler);
-};
-
 Array.prototype.slice = function (start, end) {
-  let wrappedArray = this.wrap();
   let outputArr = [];
-  if (start >= end) {
-    return [];
-  } 
-  else if(start > 0 && end <= 0 || start > 0)
-  for (let i = start; i < end; i++) {
-    outputArr.push(wrappedArray[i]);
+  if (start < 0) {
+    start = this.length + start;
+  } else if (end < 0) {
+    end = this.length + end;
   }
 
-  if (end > this.length) {
-    outputArr.length = this.length - start;
+  if (start > end) {
+    return [];
+  }
+
+  for (let i = start; i < end; i++) {
+    outputArr.push(this[i]);
   }
   return outputArr;
 };
 
-console.log([1, 2, 3, 4].slice(-1, 7));
+console.log([1, 2, 3, 4, 5, 6].slice(2, -2));
